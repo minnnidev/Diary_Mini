@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3CA2C028744DEE00D030A9 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA2BF28744DEE00D030A9 /* Diary.swift */; };
 		ABDDACB828743A510038DBB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDACB728743A510038DBB7 /* AppDelegate.swift */; };
 		ABDDACBA28743A510038DBB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDACB928743A510038DBB7 /* SceneDelegate.swift */; };
 		ABDDACBC28743A510038DBB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDACBB28743A510038DBB7 /* ViewController.swift */; };
 		ABDDACBF28743A510038DBB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDDACBD28743A510038DBB7 /* Main.storyboard */; };
 		ABDDACC128743A530038DBB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDDACC028743A530038DBB7 /* Assets.xcassets */; };
 		ABDDACC428743A530038DBB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDDACC228743A530038DBB7 /* LaunchScreen.storyboard */; };
+		ABDDACCC28743CB80038DBB7 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDACCB28743CB80038DBB7 /* StarViewController.swift */; };
+		ABDDACCE28743CD90038DBB7 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDACCD28743CD90038DBB7 /* WriteDiaryViewController.swift */; };
+		ABDDACD028743CEB0038DBB7 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDACCF28743CEB0038DBB7 /* DiaryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB3CA2BF28744DEE00D030A9 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		ABDDACB428743A510038DBB7 /* Diary_Mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary_Mini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDDACB728743A510038DBB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDDACB928743A510038DBB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		ABDDACC028743A530038DBB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABDDACC328743A530038DBB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABDDACC528743A530038DBB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABDDACCB28743CB80038DBB7 /* StarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
+		ABDDACCD28743CD90038DBB7 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		ABDDACCF28743CEB0038DBB7 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				ABDDACC028743A530038DBB7 /* Assets.xcassets */,
 				ABDDACC228743A530038DBB7 /* LaunchScreen.storyboard */,
 				ABDDACC528743A530038DBB7 /* Info.plist */,
+				ABDDACCB28743CB80038DBB7 /* StarViewController.swift */,
+				ABDDACCD28743CD90038DBB7 /* WriteDiaryViewController.swift */,
+				ABDDACCF28743CEB0038DBB7 /* DiaryDetailViewController.swift */,
+				AB3CA2BF28744DEE00D030A9 /* Diary.swift */,
 			);
 			path = Diary_Mini;
 			sourceTree = "<group>";
@@ -138,7 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3CA2C028744DEE00D030A9 /* Diary.swift in Sources */,
+				ABDDACCC28743CB80038DBB7 /* StarViewController.swift in Sources */,
+				ABDDACD028743CEB0038DBB7 /* DiaryDetailViewController.swift in Sources */,
 				ABDDACBC28743A510038DBB7 /* ViewController.swift in Sources */,
+				ABDDACCE28743CD90038DBB7 /* WriteDiaryViewController.swift in Sources */,
 				ABDDACB828743A510038DBB7 /* AppDelegate.swift in Sources */,
 				ABDDACBA28743A510038DBB7 /* SceneDelegate.swift in Sources */,
 			);
