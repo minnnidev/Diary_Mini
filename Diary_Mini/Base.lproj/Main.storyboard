@@ -51,24 +51,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nps-bc-8cN">
-                                                    <rect key="frame" x="69" y="53" width="30" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="제목" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nps-bc-8cN">
+                                                    <rect key="frame" x="12" y="12" width="156" height="143"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2022.07.05.화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvP-4t-set">
-                                                    <rect key="frame" x="38" y="150" width="104" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.05.화" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvP-4t-set">
+                                                    <rect key="frame" x="12" y="167" width="156" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nps-bc-8cN" firstAttribute="top" secondItem="iOi-MU-COZ" secondAttribute="top" constant="12" id="0PQ-Qs-Xl2"/>
-                                                <constraint firstAttribute="trailing" secondItem="nps-bc-8cN" secondAttribute="trailing" constant="12" id="GaP-Hi-Hz6"/>
-                                                <constraint firstItem="nps-bc-8cN" firstAttribute="leading" secondItem="iOi-MU-COZ" secondAttribute="leading" constant="12" id="Jat-rm-q8n"/>
-                                                <constraint firstItem="bvP-4t-set" firstAttribute="top" secondItem="nps-bc-8cN" secondAttribute="bottom" constant="12" id="s5M-J5-awx"/>
+                                                <constraint firstItem="nps-bc-8cN" firstAttribute="leading" secondItem="iOi-MU-COZ" secondAttribute="leading" constant="12" id="8fJ-LR-K9T"/>
+                                                <constraint firstAttribute="bottom" secondItem="bvP-4t-set" secondAttribute="bottom" constant="12" id="C7j-Sa-Ear"/>
+                                                <constraint firstItem="nps-bc-8cN" firstAttribute="top" secondItem="iOi-MU-COZ" secondAttribute="top" constant="12" id="EAS-GC-ga6"/>
+                                                <constraint firstItem="bvP-4t-set" firstAttribute="top" secondItem="nps-bc-8cN" secondAttribute="bottom" constant="12" id="XX8-25-hlo"/>
+                                                <constraint firstItem="bvP-4t-set" firstAttribute="leading" secondItem="iOi-MU-COZ" secondAttribute="leading" constant="12" id="ZMk-2k-hgH"/>
+                                                <constraint firstAttribute="trailing" secondItem="nps-bc-8cN" secondAttribute="trailing" constant="12" id="arN-47-Akp"/>
+                                                <constraint firstAttribute="trailing" secondItem="bvP-4t-set" secondAttribute="trailing" constant="12" id="efS-lw-Iz9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="200"/>
@@ -88,10 +91,13 @@
                     <navigationItem key="navigationItem" id="Ufu-31-BDm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xwD-3k-vU5">
                             <connections>
-                                <segue destination="Pvc-NT-jtZ" kind="push" id="Y4S-U0-I6v"/>
+                                <segue destination="Pvc-NT-jtZ" kind="push" identifier="WriteDiaryViewController" id="Y4S-U0-I6v"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionVIew" destination="3Se-TO-kET" id="gMo-jv-KbA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
