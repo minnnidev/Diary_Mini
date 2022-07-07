@@ -43,7 +43,7 @@ class WriteDiaryViewController: UIViewController {
     
     @objc func datePickerValueChanged(_ datePicker: UIDatePicker) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd/EE"
+        formatter.dateFormat = "yyyy-MM-dd (EE)"
         formatter.locale = Locale(identifier: "ko_KR")
         self.diaryDate = datePicker.date
         self.dateTextField.text = formatter.string(from: datePicker.date)
