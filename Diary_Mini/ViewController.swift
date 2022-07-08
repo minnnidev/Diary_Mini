@@ -10,13 +10,17 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var diary: Diary?
-    var diaryList = [Diary]()
+    var diaryList = [Diary]() {
+        //프로퍼티가 변경될 때마다 호출되는 옵저버
+        didSet {
+            self.saveData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
+        self.loadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,6 +39,41 @@ class ViewController: UIViewController {
         //인스턴스 생성
         self.collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         self.collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) //상하좌우 간격 10
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+    
+    //save data - UserDefaults 이용
+    private func saveData() {
+        //UserDefaults 이용 위해 dictionary로 wrap
+        let data = self.diaryList.map {
+           [
+            "title": $0.title,
+            "contents": $0.contents,
+            "date": $0.date,
+            "isStar": $0.isStar
+           ]
+        }
+        UserDefaults.standard.set(data, forKey: "DiaryData")
+    }
+    
+    //load data - UserDefaults
+    private func loadData() {
+        //Userdefaults에 저장하기 위해 dictionary로 map한 걸 다시 unwrap
+        //[[String:Any]] -> 딕셔너리 배열 타입
+        guard let data = UserDefaults.standard.object(forKey: "DiaryData") as? [[String: Any]] else {return}
+        //딕셔너리 배열 타입을 다시 Diary 타입으로 바꿔주어야 함
+        self.diaryList = data.compactMap({
+            guard let title = $0["title"] as? String else {return nil}
+            guard let contents = $0["contents"] as? String else {return nil}
+            guard let date = $0["date"] as? Date else {return nil}
+            guard let isStar = $0["isStar"] as? Bool else {return nil}
+            return Diary(title: title, contents: contents, date: date, isStar: isStar)
+        })
+        //날짜 순으로 다시 정렬
+        self.diaryList = self.diaryList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
     }
      
 }

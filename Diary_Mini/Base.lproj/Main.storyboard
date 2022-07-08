@@ -184,6 +184,7 @@
                     <connections>
                         <outlet property="contentView" destination="ac8-y3-fGm" id="fjY-1K-Mx4"/>
                         <outlet property="dateTextField" destination="DjK-RW-p2x" id="zhN-Z4-7tI"/>
+                        <outlet property="registerButton" destination="eKx-3m-OVL" id="V0d-fA-Jom"/>
                         <outlet property="titleTextField" destination="rk3-cp-HLR" id="f8u-vf-rYZ"/>
                     </connections>
                 </viewController>
