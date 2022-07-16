@@ -9,6 +9,7 @@ import UIKit
 
 protocol DiaryDetailViewDelegate: AnyObject {
     func didSelectDelete(indexPath: IndexPath)
+    func didSelectStar(indexPath: IndexPath, isStar: Bool)
 }
 
 class DiaryDetailViewController: UIViewController {
@@ -19,6 +20,7 @@ class DiaryDetailViewController: UIViewController {
     var diary: Diary?
     var indexPath: IndexPath?
     weak var delegate: DiaryDetailViewDelegate?
+    var starButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,25 @@ class DiaryDetailViewController: UIViewController {
         self.titleLabel.text = diary.title
         self.contentView.text = diary.contents
         self.dateLabel.text = dateToString(date: diary.date)
+        
+        //즐겨찾기 버튼 추가
+        self.starButton = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(tapStarButton))
+        self.starButton?.image = diary.isStar ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        self.starButton?.tintColor = .orange
+        self.navigationItem.rightBarButtonItem = self.starButton
+    }
+    
+    @objc func tapStarButton() {
+        //diary.isStar이 true이면 탭했을 때 빈 star 이미지, false이면 탭했을 때 꽉 찬 star 이미지
+        guard let isStar = self.diary?.isStar else {return}
+        guard let indexPath = self.indexPath else {return}
+        if isStar {
+            self.starButton?.image = UIImage(systemName: "star")
+        } else {
+            self.starButton?.image = UIImage(systemName: "star.fill")
+        }
+        self.diary?.isStar = !isStar
+        self.delegate?.didSelectStar(indexPath: indexPath, isStar: self.diary?.isStar ?? false)
     }
     
     private func dateToString(date: Date) -> String {
